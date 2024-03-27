@@ -11,6 +11,6 @@ describe("NavBar", () => {
       </MemoryRouter>
     );
 
-    expect(asFragment()).toMachSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
