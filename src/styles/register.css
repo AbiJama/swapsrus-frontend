@@ -1,21 +1,20 @@
-/* register.css */
 
-/* Container holding the registration form */
+
+
 .register-container {
     max-width: 200px;
-    margin: 0 auto; /* Center the form horizontally */
+    margin: 0 auto; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
   }
   
-  /* Heading for the registration form */
+
   .register-container h2 {
     margin-bottom: 20px;
   }
-  
-  /* Styling for input fields */
+
   .register-container input {
     width: 100%;
     margin-bottom: 10px;
@@ -24,7 +23,7 @@
     border-radius: 5px;
   }
   
-  /* Styling for the submit button */
+ 
   .register-container button {
     width: 100%;
     padding: 10px;
