@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+function NavBar() {
   return (
     <div className="nav-bar">
       <img className="logo" src="logo.png" alt="swapzRus icon" />
@@ -15,9 +15,14 @@ const NavBar = () => {
         <li className="navbar-links-item">
           <Link to="/add-toys">Add Toys</Link>
         </li>
+        <li className="navbar-links-item">
+          <Link to="/login">Login</Link>
+        </li>
+        <li className="navbar-links-item">
+          <Link to="/register">Register</Link>
+        </li>
       </ul>
     </div>
   );
-};
-
+}
 export default NavBar;
