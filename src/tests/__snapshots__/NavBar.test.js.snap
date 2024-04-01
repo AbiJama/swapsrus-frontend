@@ -3,7 +3,7 @@
 exports[`NavBar renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="nav-bar"
+    class="navbar"
   >
     <img
       alt="swapzRus icon"
@@ -17,16 +17,8 @@ exports[`NavBar renders correctly 1`] = `
         class="navbar-links-item"
       >
         <a
-          href="/"
-        >
-          Account
-        </a>
-      </li>
-      <li
-        class="navbar-links-item"
-      >
-        <a
-          href="/"
+          class=""
+          href="/about-us"
         >
           About Us
         </a>
@@ -35,7 +27,8 @@ exports[`NavBar renders correctly 1`] = `
         class="navbar-links-item"
       >
         <a
-          href="/"
+          class=""
+          href="/toys"
         >
           Toys
         </a>
@@ -44,9 +37,30 @@ exports[`NavBar renders correctly 1`] = `
         class="navbar-links-item"
       >
         <a
-          href="/"
+          class=""
+          href="/add-toys"
         >
           Add Toys
+        </a>
+      </li>
+      <li
+        class="navbar-links-item"
+      >
+        <a
+          class=""
+          href="/login"
+        >
+          Login
+        </a>
+      </li>
+      <li
+        class="navbar-links-item"
+      >
+        <a
+          class=""
+          href="/register"
+        >
+          Register
         </a>
       </li>
     </ul>
