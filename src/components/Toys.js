@@ -1,5 +1,7 @@
 import React from "react";
 
-const Toys = () => <div>Toys</div>;
+function Toys() {
+  <div>Toys</div>;
+}
 
 export default Toys;
