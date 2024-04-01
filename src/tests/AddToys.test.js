@@ -12,8 +12,8 @@ describe("AddToys", () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
-    const toyTitle = screen.getByText(/Toy Title/i);
+    const toyTitleInput = screen.getByLabelText(/Toy Title/i);
 
-    expect(toyTitle).toBeInTheDocument();
+    expect(toyTitleInput).toBeInTheDocument();
   });
 });
