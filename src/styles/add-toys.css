@@ -1,0 +1,37 @@
+.add-toy {
+    width: 30%;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem;
+    border: 3px solid antiquewhite;
+  }
+  
+  .add-toy-form {
+    width: 50%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-toy-form div {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .add-toy-form label {
+    display: block;
+    text-align: left;
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+  
+  .add-toy-form button {
+    margin-top: 0.5rem;
+    width: 30%;
+    height: 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+  }
