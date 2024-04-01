@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Toys from "./Toys";
 import AddToys from "./AddToys";
@@ -10,13 +10,14 @@ import Register from "./Register";
 function App() {
   return (
     <div className="App">
+      <h2>SwapRUs</h2>
       <NavBar />
       <Routes>
         <Route path="/" element={<AboutUs />} />
-        <Route path="/login" component={<Login />} />
-        <Route path="/register" component={Register} />
-        <Route path="add-toys" element={<AddToys />} />
-        <Route path="toys" element={<Toys />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/add-toys" element={<AddToys />} />
+        <Route path="/toys" element={<Toys />} />
       </Routes>
     </div>
   );

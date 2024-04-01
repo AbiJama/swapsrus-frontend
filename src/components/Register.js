@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Alert from "./Alert";
 import { auth } from "../config/firebase-config";
+import "../styles/register.css";
 
 function Register() {
   const initialState = {

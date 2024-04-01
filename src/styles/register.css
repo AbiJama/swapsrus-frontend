@@ -1,0 +1,62 @@
+/* register.css */
+
+/* Container holding the registration form */
+.register-container {
+    max-width: 200px;
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  /* Heading for the registration form */
+  .register-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for input fields */
+  .register-container input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Styling for the submit button */
+  .register-container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the submit button */
+  .register-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styling for the alert message */
+  .register-container .alert {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Styling for success alert */
+  .register-container .alert.success {
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+    color: #3c763d;
+  }
+  
+  /* Styling for error alert */
+  .register-container .alert.error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442
+  }

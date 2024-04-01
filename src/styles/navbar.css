@@ -1,0 +1,31 @@
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.logo {
+    max-height: 300px; 
+  }
+
+  .navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links-item {
+    display: inline-block;
+    margin: 0;
+    padding: 30px;
+    text-decoration: underline;
+    color: black;
+  }
+  
+  .navbar-links-item a {
+    text-decoration: none;
+    color: black;
+  }
