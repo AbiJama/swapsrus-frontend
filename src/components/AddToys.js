@@ -51,7 +51,7 @@ const AddToys = () => {
   return (
     <div class Name="add-toys">
       <Alert message={alert.message} success={alert.isSuccess} />
-      <form className="add-toy-form" onSubmit={handleAddToy}>
+      <form className="add-toy-form" onSubmit={handleAddToys}>
         <label htmlFor="title">
           Toy Title:
           <br />
