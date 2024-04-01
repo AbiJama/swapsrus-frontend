@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "./Alert";
 
-const CreateAccount = () => {
+function CreateAccount() {
     const initialState = {
         fields: {
-            email; "",
+            email: "",
             password: "",
         },
         alert: {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import getToys from "../requests/getToys";
 import ToyCard from "./ToyCard";
+import "../styles/toys.css"
 
 function Toys() {
  const [toys, setToys] = useState([]);
@@ -15,7 +16,7 @@ function Toys() {
  }, []);
 
  return (
-  <div>
+  <div className="toys-display">
    {toys.map((toy) => {
     return (
      <ToyCard
@@ -26,6 +27,7 @@ function Toys() {
       ageRange={toy.ageRange}
       condition={toy.condition}
       postcode={toy.postcode}
+      image={toy.image}
      />
     );
    })}  </div>
