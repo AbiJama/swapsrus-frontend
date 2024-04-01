@@ -59,7 +59,7 @@ const AddToys = () => {
           <input
             id="title"
             name="title"
-            placeholder="type of toy"
+            placeholder="Enter title here..."
             value={fields.title}
             onChange={handleFieldChange}
           />
@@ -74,6 +74,7 @@ const AddToys = () => {
             value={fields.type}
             onChange={handleFieldChange}
           >
+            <option value="Choose Category">Choose Category</option>
             <option value="Books">Books</option>
             <option value="Pre-school">Pre-school</option>
             <option value="Indoor">Indoor</option>
@@ -90,6 +91,7 @@ const AddToys = () => {
             value={fields.condition}
             onChange={handleFieldChange}
           >
+            <option value="Select Condition">Select Condition</option>
             <option value="Brand New">Brand New</option>
             <option value="Like New">Like New</option>
             <option value="Used">Used</option>
@@ -109,6 +111,7 @@ const AddToys = () => {
             value={fields.ageRange}
             onChange={handleFieldChange}
           >
+            <option value="select age range">Select age range</option>
             <option value="0-3">0-3</option>
             <option value="3-6">3-6</option>
             <option value="6-9">6-9</option>
@@ -124,7 +127,7 @@ const AddToys = () => {
             id="description"
             name="description"
             type="text"
-            placeholder="..."
+            placeholder="Enter description here..."
             value={fields.description}
             onChange={handleFieldChange}
           />
@@ -141,11 +144,11 @@ const AddToys = () => {
             value={fields.price}
             onChange={handleFieldChange}
           >
-            <option value="0-3">0-3</option>
-            <option value="3-6">3-6</option>
-            <option value="6-9">6-9</option>
-            <option value="9-12">9-12</option>
-            <option value="12+">12+</option>
+            <option value="0-3">1 month</option>
+            <option value="3-6">3 months</option>
+            <option value="6-9">6 months</option>
+            <option value="9-12">12 months</option>
+            <option value="12+">12+months</option>
           </select>
         </label>
         <button type="submit">Add</button>
