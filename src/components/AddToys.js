@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Alert from "./Alert";
+import "../styles/add-toys.css";
 
 const AddToys = () => {
   const initialState = {
@@ -49,7 +50,7 @@ const AddToys = () => {
   };
 
   return (
-    <div class Name="add-toys">
+    <div className="add-toys">
       <Alert message={alert.message} success={alert.isSuccess} />
       <form className="add-toy-form" onSubmit={handleAddToys}>
         <label htmlFor="title">
@@ -101,7 +102,7 @@ const AddToys = () => {
           </select>
         </label>
         <label htmlFor="ageRange">
-          AgeRange:
+          Age Range:
           <br />
           <br />
           <select
@@ -133,7 +134,7 @@ const AddToys = () => {
           />
         </label>
         <label htmlFor="borrow-period">
-          borrowPeriod:
+          Borrow Period:
           <br />
           <br />
           <select

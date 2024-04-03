@@ -5,9 +5,6 @@ exports[`App renders correctly 1`] = `
   <div
     class="App"
   >
-    <header
-      class="App-header"
-    />
     <div
       class="nav-bar"
     >
@@ -23,16 +20,7 @@ exports[`App renders correctly 1`] = `
           class="navbar-links-item"
         >
           <a
-            href="/"
-          >
-            Account
-          </a>
-        </li>
-        <li
-          class="navbar-links-item"
-        >
-          <a
-            href="/"
+            href="/about-us"
           >
             About Us
           </a>
@@ -41,7 +29,7 @@ exports[`App renders correctly 1`] = `
           class="navbar-links-item"
         >
           <a
-            href="/"
+            href="/toys"
           >
             Toys
           </a>
@@ -50,12 +38,15 @@ exports[`App renders correctly 1`] = `
           class="navbar-links-item"
         >
           <a
-            href="/"
+            href="/add-toys"
           >
             Add Toys
           </a>
         </li>
       </ul>
+    </div>
+    <div>
+      About Us
     </div>
   </div>
 </DocumentFragment>
