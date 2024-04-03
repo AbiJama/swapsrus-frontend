@@ -29,6 +29,7 @@
     "import/order": [1],
     "no-unused-vars": [1],
     "prettier/prettier": [1, { "endOfLine": "auto" }],
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
     "react/jsx-filename-extension": [
       1,
       {
