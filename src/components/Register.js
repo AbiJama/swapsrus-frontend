@@ -7,8 +7,10 @@ import "../styles/register.css";
 
 function Register() {
   const initialState = {
+    name: "",
     email: "",
     password: "",
+    area: "",
   };
 
   const [fields, setFields] = useState(initialState);
@@ -49,6 +51,14 @@ function Register() {
       <h2>Register</h2>
       <form onSubmit={handleSignUp}>
         <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value={fields.name}
+          onChange={handleFieldChange}
+          required
+        />
+        <input
           type="email"
           name="email"
           placeholder="Email"
@@ -61,6 +71,14 @@ function Register() {
           name="password"
           placeholder="Password"
           value={fields.password}
+          onChange={handleFieldChange}
+          required
+        />
+        <input
+          type="text"
+          name="area"
+          placeholder="Area"
+          value={fields.area}
           onChange={handleFieldChange}
           required
         />
