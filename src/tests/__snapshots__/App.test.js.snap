@@ -65,6 +65,9 @@ exports[`App renders correctly 1`] = `
         </svg>
       </a>
     </div>
+    <div>
+      About Us
+    </div>
   </div>
 </DocumentFragment>
 `;
