@@ -9,7 +9,6 @@ import Profile from "./Profile";
 function App() {
   return (
     <div className="App">
-      <h2>SwapRUs</h2>
       <NavBar />
       <Routes>
         <Route path="/" element={<AboutUs />} />
