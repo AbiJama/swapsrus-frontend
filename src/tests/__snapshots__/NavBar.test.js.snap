@@ -8,7 +8,7 @@ exports[`NavBar renders correctly 1`] = `
     <img
       alt="swapzRus icon"
       class="logo"
-      src="logo.png"
+      src="logo2.png"
     />
     <ul
       class="navbar-links"
@@ -17,7 +17,7 @@ exports[`NavBar renders correctly 1`] = `
         class="navbar-links-item"
       >
         <a
-          class=""
+         
           href="/about-us"
         >
           About Us
@@ -27,17 +27,17 @@ exports[`NavBar renders correctly 1`] = `
         class="navbar-links-item"
       >
         <a
-          class=""
+          
           href="/toys"
         >
-          Toys
+          Browse Toys
         </a>
       </li>
       <li
         class="navbar-links-item"
       >
         <a
-          class=""
+          
           href="/add-toys"
         >
           Add Toys
@@ -61,6 +61,32 @@ exports[`NavBar renders correctly 1`] = `
           href="/register"
         >
           Register
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li
+        class="navbar-profile-icon"
+      >
+        <a
+          href="/profile"
+        >
+          Account   
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-user "
+            data-icon="user"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              fill="currentColor"
+            />
+          </svg>
         </a>
       </li>
     </ul>
