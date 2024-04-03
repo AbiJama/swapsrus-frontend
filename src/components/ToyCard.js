@@ -1,18 +1,27 @@
 import React from "react";
-import axios from "axios"
+import axios from "axios";
 import "../styles/toy-card.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 export default function ToyCard(props) {
- const {key, title, description, condition, ageRange, postcode, type, image } =
-  props;
-  console.log(key)  
+ const {
+  id,
+  title,
+  description,
+  condition,
+  ageRange,
+  postcode,
+  type,
+  image,
+  setToys,
+ } = props;
  const imageSource = `/images/${image}.png`;
 
  const handleDelete = () => {
   return axios
-   .delete(`http://localhost:4000/toys/9`)
+   .delete(`http://localhost:4000/toys/${id}`)
+   .then(setToys((prevToys) => prevToys.filter((toy) => toy.id !== id)))
    .catch((error) => console.log(error));
  };
 

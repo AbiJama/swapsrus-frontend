@@ -5,7 +5,6 @@ import Toys from "./Toys";
 import AddToys from "./AddToys";
 import AboutUs from "./AboutUs";
 import Profile from "./Profile";
-import Login from "./Login";
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<AboutUs />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/add-toys" element={<AddToys />} />
         <Route path="/toys" element={<Toys />} />
         <Route path="profile" element={<Profile />} />

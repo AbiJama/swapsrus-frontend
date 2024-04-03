@@ -6,6 +6,7 @@ import "../styles/toys.css"
 
 function Toys() {
  const [toys, setToys] = useState([]);
+ 
 
  useEffect(() => {
   const toyFunction = async () => {
@@ -22,6 +23,7 @@ function Toys() {
     return (
      <ToyCard
       key={toy.id}
+      id={toy.id}
       title={toy.title}
       type={toy.type}
       description={toy.description}
@@ -29,6 +31,7 @@ function Toys() {
       condition={toy.condition}
       postcode={toy.postcode}
       image={toy.image}
+      setToys={setToys}
      />
     );
    })}  </div>
