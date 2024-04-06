@@ -1,4 +1,20 @@
-.button{
-    display:flex;
-    justify-content: space-around;
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.browse-toys-logo {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.upload-toys-logo {
+  flex: 1;
+  margin-right: 10px;
+
+}
+
+.img {
+    width: 100px;
+    height: 100px;
 }

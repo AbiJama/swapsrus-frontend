@@ -4,7 +4,8 @@ import ToyCard from "./ToyCard";
 import "../styles/toys.css";
 
 function Toys() {
-  const [toys, setToys] = useState([]);
+ const [toys, setToys] = useState([]);
+ 
 
   useEffect(() => {
     const toyFunction = async () => {
@@ -14,24 +15,26 @@ function Toys() {
     toyFunction();
   }, []);
 
-  return (
-    <div className="toys-display">
-      {toys.map((toy) => {
-        return (
-          <ToyCard
-            key={toy.id}
-            title={toy.title}
-            type={toy.type}
-            description={toy.description}
-            ageRange={toy.ageRange}
-            condition={toy.condition}
-            postcode={toy.postcode}
-            image={toy.image}
-          />
-        );
-      })}{" "}
-    </div>
-  );
+
+ return (
+  <div className="toys-display">
+   {toys.map((toy) => {
+    return (
+     <ToyCard
+      key={toy.id}
+      id={toy.id}
+      title={toy.title}
+      type={toy.type}
+      description={toy.description}
+      ageRange={toy.ageRange}
+      condition={toy.condition}
+      postcode={toy.postcode}
+      image={toy.image}
+      setToys={setToys}
+     />
+    );
+   })}  </div>
+ );
 }
 
 export default Toys;
