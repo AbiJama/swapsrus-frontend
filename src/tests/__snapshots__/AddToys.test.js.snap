@@ -175,6 +175,11 @@ exports[`AddToys renders correctly 1`] = `
           type="number"
         >
           <option
+            value="select borrow period"
+          >
+            Select Borrow Period
+          </option>
+          <option
             value="0-3"
           >
             1 month
@@ -200,6 +205,32 @@ exports[`AddToys renders correctly 1`] = `
             12+months
           </option>
         </select>
+      </label>
+      <label
+        for="postcode"
+      >
+        Postcode:
+        <br />
+        <input
+          id="postcode"
+          name="postcode"
+          placeholder="Enter postcode"
+          type="text"
+          value=""
+        />
+      </label>
+      <label
+        for="image"
+      >
+        Image Upload:
+        <br />
+        <input
+          id="image"
+          name="image"
+          placeholder="Enter demo image name"
+          type="text"
+          value=""
+        />
       </label>
       <button
         type="submit"

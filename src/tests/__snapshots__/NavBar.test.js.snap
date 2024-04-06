@@ -65,6 +65,16 @@ exports[`NavBar renders correctly 1`] = `
             />
           </svg>
         </a>
+        <a
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          href="/register"
+        >
+          Register
+        </a>
       </li>
     </ul>
   </div>
