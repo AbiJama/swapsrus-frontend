@@ -25,6 +25,12 @@ function NavBar() {
           <Link to="/profile">
             Account <FontAwesomeIcon icon={faUser} />
           </Link>
+          <Link to="/login">
+            Login
+          </Link>
+          <Link to="/register">
+            Register
+          </Link>
         </li>
       </ul>
     </div>
