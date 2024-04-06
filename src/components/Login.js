@@ -5,7 +5,6 @@ import axios from "axios";
 import { auth } from "../config/firebase-config";
 import "../styles/login.css";
 
-
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,16 +21,6 @@ function Login() {
       navigate("/profile");
     } catch (error) {
       console.error("Error logging in:", error.message);
-    }
-  };
-
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      console.log("User logged out successfully!");
-      navigate('/login')
-    } catch (error) {
-      console.error("Error logging out:", error.message);
     }
   };
 
@@ -52,9 +41,6 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
-        <button type="button" onClick={handleLogout}>
-          Logout
-        </button>
       </form>
     </div>
   );

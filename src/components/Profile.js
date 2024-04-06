@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios"; // Import Axios for making HTTP requests
+import axios from "axios";
 
 function Profile() {
   const [user, setUser] = useState(null);
