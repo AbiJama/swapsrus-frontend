@@ -22,3 +22,5 @@ const AboutUs = ({ Toys, addToys }) => {
     </div>
   );
 };
+
+export default AboutUs;
