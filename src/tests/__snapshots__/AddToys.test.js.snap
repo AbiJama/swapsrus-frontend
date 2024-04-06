@@ -3,7 +3,7 @@
 exports[`AddToys renders correctly 1`] = `
 <DocumentFragment>
   <div
-    classnuame="add-toys"
+    class="add-toys"
   >
     <form
       class="add-toy-form"
