@@ -11,6 +11,7 @@ import Profile from "./Profile";
 function App() {
   return (
     <div className="App">
+      <SideBar />
       <NavBar />
       <Routes>
         <Route path="/login" element={<Login />} />
