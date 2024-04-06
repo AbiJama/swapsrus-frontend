@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { auth } from "../config/firebase-config";
 import "../styles/login.css";
 
@@ -12,21 +13,14 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const { user } = userCredential
       console.log("User logged in successfully!");
-      navigate("/");
+      const response = await axios.get(`http://localhost:4000/users/uid/${user.uid}`);
+      console.log(response.data)
+      navigate("/profile");
     } catch (error) {
       console.error("Error logging in:", error.message);
-    }
-  };
-
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      console.log("User logged out successfully!");
-      // maybe add a redirections to another page when logged out?
-    } catch (error) {
-      console.error("Error logging out:", error.message);
     }
   };
 
@@ -47,9 +41,6 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
-        <button type="button" onClick={handleLogout}>
-          Logout
-        </button>
       </form>
     </div>
   );

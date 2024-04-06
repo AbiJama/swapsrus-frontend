@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
+import Logout from "./logout"
 import Toys from "./Toys";
 import AddToys from "./AddToys";
 import AboutUs from "./AboutUs";
-import Login from "./Login"
 import Register from "./Register";
 import Profile from "./Profile";
 import SideBar from "./SideBar";
@@ -22,6 +22,7 @@ function App() {
         <Route path="/toys" element={<Toys />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+      <Logout />
     </div>
   );
 }

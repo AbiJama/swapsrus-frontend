@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Alert from "./Alert";
 import { auth } from "../config/firebase-config";
 import "../styles/register.css";
@@ -21,14 +22,16 @@ function Register() {
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
     createUserWithEmailAndPassword(auth, fields.email, fields.password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         const { user } = userCredential;
         console.log("Account Created");
         setAlert({
           message: "Your account has been created!",
           isSuccess: true,
         });
-        navigate("/");
+        await axios.post("http://localhost:4000/users", { ...fields, uid: user.uid });
+        console.log("User data saved in backend");
+        navigate("/login");
       })
       .catch((error) => {
         const errorMessage = error.message;
