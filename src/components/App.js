@@ -4,6 +4,8 @@ import NavBar from "./NavBar";
 import Toys from "./Toys";
 import AddToys from "./AddToys";
 import AboutUs from "./AboutUs";
+
+import Register from "./Register";
 import Profile from "./Profile";
 import Login from "./Login";
 
@@ -13,6 +15,7 @@ function App() {
       <h2>SwapRUs</h2>
       <NavBar />
       <Routes>
+        <Route path="/register" element={<Register />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/add-toys" element={<AddToys />} />
