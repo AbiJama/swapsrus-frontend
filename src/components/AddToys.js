@@ -3,7 +3,7 @@ import axios from "axios";
 import Alert from "./Alert";
 import "../styles/add-toys.css";
 
-const AddToys = () => {
+function AddToys() {
   const initialState = {
     fields: {
       title: "",
@@ -12,6 +12,7 @@ const AddToys = () => {
       ageRange: "",
       description: "",
       borrowPeriod: "",
+      image: ""
     },
     alert: {
       message: "",
@@ -27,7 +28,7 @@ const AddToys = () => {
     setAlert({ message: "", isSuccess: false });
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/AddToys/",
+        "http://localhost:4000/toys",
         fields,
       );
       setAlert({
@@ -151,6 +152,9 @@ const AddToys = () => {
             <option value="9-12">12 months</option>
             <option value="12+">12+months</option>
           </select>
+        </label>
+        <label htmlFor="image">Image Upload: 
+        <input type="text" name="image" id="image" placeholder="Enter demo image name" value={fields.image} onChange={handleFieldChange}/>
         </label>
         <button type="submit">Add</button>
       </form>
