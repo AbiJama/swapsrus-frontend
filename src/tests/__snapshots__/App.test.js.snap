@@ -54,7 +54,7 @@ exports[`App renders correctly 1`] = `
           <a
             href="/profile"
           >
-            Account   
+            Account 
             <svg
               aria-hidden="true"
               class="svg-inline--fa fa-user "
