@@ -1,34 +1,28 @@
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import AboutUs from "../components/AboutUs";
 
-describe("AboutUs component", () => {
-  it("should navigate to /toys when browse toys button is clicked", () => {
-    const { getByAltText } = render(
+describe("AboutUs", () => {
+  it("renders correctly", () => {
+    const { asFragment } = render(
       <MemoryRouter>
         <AboutUs />
       </MemoryRouter>
     );
 
-    const browseToysButton = getByAltText("logo with browse toys text");
+    const allLinks = screen.getAllByRole("link");
 
-    fireEvent.click(browseToysButton);
-
-    expect(window.location.pathname).toBe("/toys");
-  });
-
-  it("should navigate to /add-toys when upload toys button is clicked", () => {
-    const { getByAltText } = render(
-      <MemoryRouter>
-        <AboutUs />
-      </MemoryRouter>
+    const browseToysLink = allLinks.find((link) =>
+      link.querySelector('img[alt="logo with browse toys text"]')
     );
+    const uploadToysLink = allLinks.find((link) =>
+      link.querySelector('img[alt="logo with upload toys text"]')
+    );
+    expect(asFragment()).toMatchSnapshot();
+    expect(browseToysLink).toBeInTheDocument();
+    expect(browseToysLink).toHaveAttribute("href", "/toys");
 
-    const uploadToysButton = getByAltText("logo with upload toys text");
-
-    fireEvent.click(uploadToysButton);
-
-    expect(window.location.pathname).toBe("/add-toys");
+    expect(uploadToysLink).toBeInTheDocument();
+    expect(uploadToysLink).toHaveAttribute("href", "/add-toys");
   });
 });
