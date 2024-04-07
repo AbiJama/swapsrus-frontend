@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutUs renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="about-us"
+  >
+    <h1>
+      About Us
+    </h1>
+    <p>
+      We are a toy swapping website
+    </p>
+    <div
+      class="browse-logo-toys"
+    >
+      <a
+        href="/toys"
+      >
+        <img
+          alt="logo with browse toys text"
+          src="browse-toys.png"
+        />
+      </a>
+    </div>
+    <div
+      class="upload-toys-logo"
+    >
+      <a
+        href="/add-toys"
+      >
+        <img
+          alt="logo with upload toys text"
+          src="upload-toys.png"
+        />
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
