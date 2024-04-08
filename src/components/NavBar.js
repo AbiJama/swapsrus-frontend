@@ -34,15 +34,19 @@ function NavBar() {
           </>
         )}
       </ul>
-      {user && ( // Conditionally render "Profile" icon if user is logged in
-        <ul>
-          <li className="navbar-profile-icon">
-            <Link to="/profile">
-              Account <FontAwesomeIcon icon={faUser} />
-            </Link>
-          </li>
-        </ul>
-      )}
+      <ul>
+        <li className="navbar-profile-icon">
+          <Link to="/profile">
+            Account <FontAwesomeIcon icon={faUser} />
+          </Link>
+          <Link to="/login">
+            Login
+          </Link>
+          <Link to="/register">
+            Register
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }

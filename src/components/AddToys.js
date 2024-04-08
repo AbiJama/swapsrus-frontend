@@ -3,7 +3,7 @@ import axios from "axios";
 import Alert from "./Alert";
 import "../styles/add-toys.css";
 
-const AddToys = () => {
+function AddToys() {
   const initialState = {
     fields: {
       title: "",
@@ -12,6 +12,8 @@ const AddToys = () => {
       ageRange: "",
       description: "",
       borrowPeriod: "",
+      postcode: "",
+      image: ""
     },
     alert: {
       message: "",
@@ -22,26 +24,26 @@ const AddToys = () => {
   const [fields, setFields] = useState(initialState.fields);
   const [alert, setAlert] = useState(initialState.alert);
 
+
   const handleAddToys = async (event) => {
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
     try {
-      const { data } = await axios.post(
-        "http://localhost:4000/api/v1/AddToys/",
+      const response = await axios.post(
+        "http://localhost:4000/toys",
         fields,
       );
       setAlert({
         message: "The toy has been added successfully!",
         isSuccess: true,
       });
-      console.log(data);
     } catch (error) {
       setAlert({
         message: "Server error, please try again later.",
         isSuccess: false,
       });
     }
-    setFields(initialState.fields);
+    setFields(fields);
   };
 
   const handleFieldChange = (event) => {
@@ -145,12 +147,21 @@ const AddToys = () => {
             value={fields.price}
             onChange={handleFieldChange}
           >
+             <option value="select borrow period">Select Borrow Period</option>
             <option value="0-3">1 month</option>
             <option value="3-6">3 months</option>
             <option value="6-9">6 months</option>
             <option value="9-12">12 months</option>
             <option value="12+">12+months</option>
           </select>
+        </label>
+        <label htmlFor="postcode">Postcode: 
+        <br/>
+        <input type="text" name="postcode" id="postcode" placeholder="Enter postcode" value={fields.postcode} onChange={handleFieldChange}/>
+        </label>
+        <label htmlFor="image">Image Upload: 
+        <br/>
+        <input type="text" name="image" id="image" placeholder="Enter demo image name" value={fields.image} onChange={handleFieldChange}/>
         </label>
         <button type="submit">Add</button>
       </form>
