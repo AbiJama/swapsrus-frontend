@@ -4,20 +4,30 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { auth } from "../config/firebase-config";
 import "../styles/login.css";
+import { useAuth } from "../context/AuthContext";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  const userDetails = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const { user } = userCredential
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+      const { user } = userCredential;
       console.log("User logged in successfully!");
-      const response = await axios.get(`http://localhost:4000/users/uid/${user.uid}`);
-      console.log(response.data)
+      const response = await axios.get(
+        `http://localhost:4000/users/uid/${user.uid}`,
+      );
+      console.log("error", response.data);
+      userDetails[1](response.data);
       navigate("/profile");
     } catch (error) {
       console.error("Error logging in:", error.message);

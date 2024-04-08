@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useAuth } from "../context/AuthContext";
 
 function Profile() {
   const [user, setUser] = useState(null);
+  const userDetails = useAuth()[0];
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -16,16 +18,15 @@ function Profile() {
     };
 
     fetchUserData(); // Call the function to fetch user data
-
   }, []);
-
+  console.log("couldnt retrieve user", user, userDetails);
   return (
     <div>
-      {user ? (
+      {userDetails ? (
         <div>
-          <h1>Welcome, {user.name}</h1>
-          <p>Email: {user.email}</p>
-          <p>Area: {user.area}</p>
+          <h1>Welcome, {userDetails.name}</h1>
+          <p>Email: {userDetails.email}</p>
+          <p>Area: {userDetails.area}</p>
           {/* Display other user information as needed */}
         </div>
       ) : (
