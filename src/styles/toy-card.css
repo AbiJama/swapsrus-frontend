@@ -1,8 +1,40 @@
 .toy-card_image{
-    height: 300px;
+    height: 150px;
     width: auto;
 }
 
 .toy-card{
+    background-color: white;
     margin: 20px;
+    padding: 10px;
+    border: 0.5px solid white;
+    height: 420px;
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+.toy-card>*{
+    background-color: white;
+}
+
+.toy-card_buttons{
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+}
+
+.button{
+    border-radius: 3px;
+    border: none;
+    padding: 5px
+}
+
+.toy-card_heart>img{
+    height: 30px
+}
+
+.toy-card_heart{
+    height: 40px;
 }

@@ -3,6 +3,7 @@
     background-color: #2B677C;
     height: 100px;
     display: flex;
+    justify-content: space-between;
 }
 
 .nav-bar>*{
@@ -24,6 +25,10 @@
 li{
     background-color: #2B677C;
     margin-top: 40px;
+}
+
+li>*>*{
+    background-color: #2B677C;
 }
 
 li > a{

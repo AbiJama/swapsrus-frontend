@@ -19,8 +19,6 @@ function NavBar() {
         <li className="navbar-links-item">
           <Link to="/add-toys">Add Toys</Link>
         </li>
-      </ul>
-      <ul>
         <li className="navbar-profile-icon">
           <Link to="/profile">
             Account <FontAwesomeIcon icon={faUser} />

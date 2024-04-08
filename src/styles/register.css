@@ -1,12 +1,15 @@
 .register-container {
-    max-width: 200px;
-    margin: 0 auto; 
-    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 40px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
   }
   
+  .register-container>*{
+    background-color: white;
+  }
 
   .register-container h2 {
     margin-bottom: 20px;
@@ -22,17 +25,17 @@
   
  
   .register-container button {
-    width: 100%;
+    width: 105%;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #FFC93C;
     color: #fff;
     cursor: pointer;
   }
 
   .register-container button:hover {
-    background-color: #0056b3;
+    background-color: #FFC93C;
   }
   
   .register-container .alert {

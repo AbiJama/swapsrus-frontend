@@ -17,6 +17,8 @@ function Toys() {
 
 
  return (
+    <>
+    <h2>Browse Toys:</h2>
   <div className="toys-display">
    {toys.map((toy) => {
     return (
@@ -34,7 +36,10 @@ function Toys() {
      />
     );
    })}  </div>
+    </>
+
  );
 }
 
 export default Toys;
+

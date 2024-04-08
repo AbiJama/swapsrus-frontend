@@ -54,6 +54,7 @@ function AddToys() {
   return (
     <div className="add-toys">
       <Alert message={alert.message} success={alert.isSuccess} />
+      <h2>Add Toys</h2>
       <form className="add-toy-form" onSubmit={handleAddToys}>
         <label htmlFor="title">
           Toy Title:
@@ -157,13 +158,15 @@ function AddToys() {
         </label>
         <label htmlFor="postcode">Postcode: 
         <br/>
+        <br/>
         <input type="text" name="postcode" id="postcode" placeholder="Enter postcode" value={fields.postcode} onChange={handleFieldChange}/>
         </label>
         <label htmlFor="image">Image Upload: 
         <br/>
+        <br/>
         <input type="text" name="image" id="image" placeholder="Enter demo image name" value={fields.image} onChange={handleFieldChange}/>
         </label>
-        <button type="submit">Add</button>
+        <button className="button" type="submit">Add</button>
       </form>
     </div>
   );

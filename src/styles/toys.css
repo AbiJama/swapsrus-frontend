@@ -1,4 +1,14 @@
 .toys-display{
     display:flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.button{
+    background-color: #FFC93C
+}
+
+h2{
+    text-align: center;
+    margin-top: 20px;
 }
