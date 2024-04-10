@@ -8,6 +8,7 @@ import AboutUs from "./AboutUs";
 import Register from "./Register";
 import Profile from "./Profile";
 import SideBar from "./SideBar";
+import Login from "./Login";
 
 function App() {
   return (

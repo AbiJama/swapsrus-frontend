@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { auth } from "../config/firebase-config";
@@ -27,7 +27,8 @@ function Login() {
         `http://localhost:4000/users/uid/${user.uid}`,
       );
       console.log("error", response.data);
-      userDetails[1](response.data);
+      // eslint-disable-next-line no-unused-expressions
+      userDetails && userDetails[1] && userDetails[1](response.data);
       navigate("/profile");
     } catch (error) {
       console.error("Error logging in:", error.message);

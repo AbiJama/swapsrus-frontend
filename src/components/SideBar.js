@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "../styles/sidebar.css";
 
-const SideBar = () => {
+function SideBar() {
   const { search } = useLocation();
   const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
@@ -43,19 +43,16 @@ const SideBar = () => {
     <div className="sidebar">
       <form className="sidebar-search" onSubmit={handleSearch}>
         <input type="text" onChange={handleFieldChange} />
-        <button type="submit">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </button>
       </form>
       <h3 className="sidebar-heading">Filter By Type</h3>
       <ul className="sidebar-links">
         <li className="sidebar-links-item">
-          <Link to={buildQueryString("query", { type: "Book" })}>
-            Book
-          </Link>
+          <Link to={buildQueryString("query", { type: "Book" })}>Book</Link>
         </li>
         <li className="sidebar-links-item">
-          <Link to={buildQueryString("query", { type: "Pre-school" })}>Pre-school</Link>
+          <Link to={buildQueryString("query", { type: "Pre-school" })}>
+            Pre-school
+          </Link>
         </li>
         <li className="sidebar-links-item">
           <Link to={buildQueryString("query", { type: "Indoor" })}>Indoor</Link>
@@ -87,6 +84,6 @@ const SideBar = () => {
       </ul>
     </div>
   );
-};
+}
 
 export default SideBar;

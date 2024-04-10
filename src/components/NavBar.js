@@ -6,8 +6,8 @@ import { useAuth } from "../context/AuthContext"; // Import the useAuth hook
 import "../styles/navbar.css";
 
 function NavBar() {
-  const { user } = useAuth(); // Access the authentication state
-
+  const userDetails = useAuth(); // Access the authentication state
+  const isLoggedIn = userDetails ? userDetails[0] : null;
   return (
     <div className="nav-bar">
       <img className="logo" src="logo2.png" alt="swapzRus icon" />
@@ -18,12 +18,12 @@ function NavBar() {
         <li className="navbar-links-item">
           <Link to="/toys">Browse Toys</Link>
         </li>
-        {user && ( // Conditionally render "Add Toys" link if user is logged in
+        {isLoggedIn && ( // Conditionally render "Add Toys" link if user is logged in
           <li className="navbar-links-item">
             <Link to="/add-toys">Add Toys</Link>
           </li>
         )}
-        {!user && ( // Conditionally render "Register" and "Login" links if user is not logged in
+        {!isLoggedIn && ( // Conditionally render "Register" and "Login" links if user is not logged in
           <>
             <li className="navbar-links-item">
               <Link to="/register">Register</Link>
@@ -34,21 +34,8 @@ function NavBar() {
           </>
         )}
       </ul>
-      <ul>
-        <li className="navbar-profile-icon">
-          <Link to="/profile">
-            Account <FontAwesomeIcon icon={faUser} />
-          </Link>
-          <Link to="/login">
-            Login
-          </Link>
-          <Link to="/register">
-            Register
-          </Link>
-        </li>
-      </ul>
     </div>
   );
-}
+};
 
 export default NavBar;
