@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,16 +22,12 @@ function NavBar() {
           <Link to="/profile">
             Account <FontAwesomeIcon icon={faUser} />
           </Link>
-          <Link to="/login">
-            Login
-          </Link>
-          <Link to="/register">
-            Register
-          </Link>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
         </li>
       </ul>
     </div>
   );
-}
+};
 
 export default NavBar;
