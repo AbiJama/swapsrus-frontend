@@ -23,7 +23,7 @@ function Profile() {
     <div>
       {userDetails && userDetails[0] ? (
         <div>
-          <h1>Welcome, {userDetails[0].name}</h1>
+          <h1>Welcome {userDetails[0].name}</h1>
           <p>Email: {userDetails[0].email}</p>
           <p>Area: {userDetails[0].area}</p>
           {/* Display other user information as needed */}

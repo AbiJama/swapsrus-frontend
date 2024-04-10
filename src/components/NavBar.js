@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { useAuth } from "../context/AuthContext"; // Import the useAuth hook
+import { useAuth } from "../context/AuthContext";
 import "../styles/navbar.css";
 
 function NavBar() {
@@ -19,9 +19,14 @@ function NavBar() {
           <Link to="/toys">Browse Toys</Link>
         </li>
         {isLoggedIn && ( // Conditionally render "Add Toys" link if user is logged in
-          <li className="navbar-links-item">
-            <Link to="/add-toys">Add Toys</Link>
-          </li>
+          <>
+            <li className="navbar-links-item">
+              <Link to="/add-toys">Add Toys</Link>
+            </li>
+            <li className="profile">
+              <Link to="/profile">Profile</Link>
+            </li>
+          </>
         )}
         {!isLoggedIn && ( // Conditionally render "Register" and "Login" links if user is not logged in
           <>
@@ -36,6 +41,6 @@ function NavBar() {
       </ul>
     </div>
   );
-};
+}
 
 export default NavBar;
