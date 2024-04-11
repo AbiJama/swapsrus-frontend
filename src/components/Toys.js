@@ -8,11 +8,18 @@ import "../styles/toys.css";
 
 function Toys() {
   const [toys, setToys] = useState([]);
-  const [filteredToys, setFilteredToys ] = useState([]);
+
+  const [filteredToys, setFilteredToys] = useState([]);
   const { search } = useLocation();
   const handleSetToys = (category) => {
-    //setToys((prev) => prev.filter((toy) => toy.type === category));
-    setFilteredToys(toys.filter((toy) => toy.type === category));
+    if (category === "all") {
+      // Reset filtered toys to show all toys
+      setFilteredToys([]);
+    } else {
+      // Filter toys based on category
+      const filtered = toys.filter((toy) => toy.type === category);
+      setFilteredToys(filtered);
+    }
   };
   console.log(toys);
 
