@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
-import Logout from "./Logout"
+import Logout from "./Logout";
 import Toys from "./Toys";
 import AddToys from "./AddToys";
 import AboutUs from "./AboutUs";
@@ -10,8 +10,9 @@ import Profile from "./Profile";
 import SideBar from "./SideBar";
 import Login from "./Login";
 
-
 function App() {
+  const [, setUser] = useState(null);
+
   return (
     <div className="App">
       <SideBar />
@@ -19,12 +20,13 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/" element={<AboutUs />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/add-toys" element={<AddToys />} />
         <Route path="/toys" element={<Toys />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile setUser={setUser} />} />
+        <Route path="/logout" element={<Logout setUser={setUser} />} />
       </Routes>
-      <Logout />
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.profile-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .highlight {
+    color: #ff9900;
+    font-weight: bold;
+  }
+  
+  .email-icon {
+    margin-left: 5px;
+  }

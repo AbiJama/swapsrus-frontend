@@ -26,13 +26,21 @@ li{
     margin-top: 40px;
 }
 
-li > a{
+li > a {
     background-color: #2B677C;
     color: #FFC93C;
     text-decoration: none;
     padding: 10px;
     margin: 10px;
 }
+
+.logout-link {
+    background-color: #2b677c;
+    color: #ffc93c;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px 100px 10px; 
+  }
 
 .navbar-profile-icon>*{
     color:#FFC93C;

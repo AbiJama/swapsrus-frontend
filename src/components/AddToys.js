@@ -13,7 +13,7 @@ function AddToys() {
       description: "",
       borrowPeriod: "",
       postcode: "",
-      image: ""
+      image: "",
     },
     alert: {
       message: "",
@@ -24,15 +24,11 @@ function AddToys() {
   const [fields, setFields] = useState(initialState.fields);
   const [alert, setAlert] = useState(initialState.alert);
 
-
   const handleAddToys = async (event) => {
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
     try {
-      const response = await axios.post(
-        "http://localhost:4000/toys",
-        fields,
-      );
+      const response = await axios.post("http://localhost:4000/toys", fields);
       setAlert({
         message: "The toy has been added successfully!",
         isSuccess: true,
@@ -147,7 +143,7 @@ function AddToys() {
             value={fields.price}
             onChange={handleFieldChange}
           >
-             <option value="select borrow period">Select Borrow Period</option>
+            <option value="select borrow period">Select Borrow Period</option>
             <option value="0-3">1 month</option>
             <option value="3-6">3 months</option>
             <option value="6-9">6 months</option>
@@ -155,18 +151,34 @@ function AddToys() {
             <option value="12+">12+months</option>
           </select>
         </label>
-        <label htmlFor="postcode">Postcode: 
-        <br/>
-        <input type="text" name="postcode" id="postcode" placeholder="Enter postcode" value={fields.postcode} onChange={handleFieldChange}/>
+        <label htmlFor="postcode">
+          Postcode:
+          <br />
+          <input
+            type="text"
+            name="postcode"
+            id="postcode"
+            placeholder="Enter postcode"
+            value={fields.postcode}
+            onChange={handleFieldChange}
+          />
         </label>
-        <label htmlFor="image">Image Upload: 
-        <br/>
-        <input type="text" name="image" id="image" placeholder="Enter demo image name" value={fields.image} onChange={handleFieldChange}/>
+        <label htmlFor="image">
+          Image Upload:
+          <br />
+          <input
+            type="text"
+            name="image"
+            id="image"
+            placeholder="Enter demo image name"
+            value={fields.image}
+            onChange={handleFieldChange}
+          />
         </label>
         <button type="submit">Add</button>
       </form>
     </div>
   );
-};
+}
 
 export default AddToys;
