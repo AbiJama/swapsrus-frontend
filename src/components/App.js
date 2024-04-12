@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
-import Logout from "./Logout";
 import Toys from "./Toys";
 import AddToys from "./AddToys";
 import AboutUs from "./AboutUs";
@@ -9,6 +8,7 @@ import Register from "./Register";
 import Profile from "./Profile";
 import SideBar from "./SideBar";
 import Login from "./Login";
+import Logout from "./Logout";
 
 function App() {
   const [, setUser] = useState(null);
