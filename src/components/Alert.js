@@ -5,7 +5,7 @@ function Alert({ message, success }) {
   if (!message) return null;
 
   return (
-    <div className={`alert alert-$(success ? "success" : "error")`}>
+    <div className={`alert alert-${success ? "success" : "error"}`}>
       {message}
     </div>
   );

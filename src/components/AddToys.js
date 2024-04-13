@@ -49,7 +49,6 @@ function AddToys() {
 
   return (
     <div className="add-toys">
-      <Alert message={alert.message} success={alert.isSuccess} />
       <h2>Add Toys</h2>
       <form className="add-toy-form" onSubmit={handleAddToys}>
         <label htmlFor="title">
@@ -180,6 +179,7 @@ function AddToys() {
           Add
         </button>
       </form>
+      <Alert message={alert.message} success={alert.isSuccess} />
     </div>
   );
 }
