@@ -3,7 +3,7 @@
 exports[`NavBar renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="navbar"
+    class="nav-bar"
   >
     <img
       alt="swapzRus icon"
@@ -17,7 +17,6 @@ exports[`NavBar renders correctly 1`] = `
         class="navbar-links-item"
       >
         <a
-         
           href="/about-us"
         >
           About Us
@@ -27,7 +26,6 @@ exports[`NavBar renders correctly 1`] = `
         class="navbar-links-item"
       >
         <a
-          
           href="/toys"
         >
           Browse Toys
@@ -37,41 +35,18 @@ exports[`NavBar renders correctly 1`] = `
         class="navbar-links-item"
       >
         <a
-          
           href="/add-toys"
         >
           Add Toys
         </a>
       </li>
       <li
-        class="navbar-links-item"
-      >
-        <a
-          class=""
-          href="/login"
-        >
-          Login
-        </a>
-      </li>
-      <li
-        class="navbar-links-item"
-      >
-        <a
-          class=""
-          href="/register"
-        >
-          Register
-        </a>
-      </li>
-    </ul>
-    <ul>
-      <li
         class="navbar-profile-icon"
       >
         <a
           href="/profile"
         >
-          Account   
+          Account 
           <svg
             aria-hidden="true"
             class="svg-inline--fa fa-user "
@@ -87,6 +62,16 @@ exports[`NavBar renders correctly 1`] = `
               fill="currentColor"
             />
           </svg>
+        </a>
+        <a
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          href="/register"
+        >
+          Register
         </a>
       </li>
     </ul>

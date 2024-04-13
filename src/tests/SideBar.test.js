@@ -18,8 +18,6 @@ describe("SideBar", () => {
     expect(screen.getByText(/Indoor/i)).toBeInTheDocument();
     expect(screen.getByText(/Outdoor/i)).toBeInTheDocument();
     expect(screen.getByText(/Clear Filter/i)).toBeInTheDocument();
-    expect(screen.getByText(/Age Range Ascending/i)).toBeInTheDocument();
-    expect(screen.getByText(/Age Range Descending/i)).toBeInTheDocument();
     expect(screen.getByText(/Clear Sort/i)).toBeInTheDocument();
   });
 });

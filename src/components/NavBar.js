@@ -28,6 +28,6 @@ function NavBar() {
       </ul>
     </div>
   );
-};
+}
 
 export default NavBar;
