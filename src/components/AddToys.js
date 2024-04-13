@@ -14,7 +14,6 @@ function AddToys() {
       borrowPeriod: "",
       postcode: "",
       image: "",
-      image: "",
     },
     alert: {
       message: "",
@@ -183,7 +182,6 @@ function AddToys() {
       </form>
     </div>
   );
-}
 }
 
 export default AddToys;
