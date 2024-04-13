@@ -52,7 +52,7 @@ function Toys() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/Toys${search}`)
+      .get(`http://localhost:4000/Toys${search}`)
       .then(({ data }) => setToys(data))
       .catch((err) => console.error("Error fetching toys:", err));
   }, [search]);
@@ -73,7 +73,7 @@ function Toys() {
             condition={toy.condition}
             postcode={toy.postcode}
             image={toy.image}
-            setToys={setToys}
+            setToys={setFilteredToys}
           />
         ))}
       </div>

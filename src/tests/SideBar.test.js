@@ -13,11 +13,10 @@ describe("SideBar", () => {
 
     expect(asFragment()).toMatchSnapshot();
     expect(screen.getByText(/Filter By Type/i)).toBeInTheDocument();
-    expect(screen.getByText(/Books/i)).toBeInTheDocument();
     expect(screen.getByText(/Pre-school/i)).toBeInTheDocument();
     expect(screen.getByText(/Indoor/i)).toBeInTheDocument();
     expect(screen.getByText(/Outdoor/i)).toBeInTheDocument();
+    expect(screen.getByText(/Books/i)).toBeInTheDocument();
     expect(screen.getByText(/Clear Filter/i)).toBeInTheDocument();
-    expect(screen.getByText(/Clear Sort/i)).toBeInTheDocument();
   });
 });

@@ -3,8 +3,11 @@
 exports[`AddToys renders correctly 1`] = `
 <DocumentFragment>
   <div
-    classnuame="add-toys"
+    class="add-toys"
   >
+    <h2>
+      Add Toys
+    </h2>
     <form
       class="add-toy-form"
     >
@@ -82,11 +85,6 @@ exports[`AddToys renders correctly 1`] = `
             value="Like New"
           >
             Like New
-          </option>
-          <option
-            value="Used"
-          >
-            Used
           </option>
           <option
             value="Good"
@@ -175,6 +173,11 @@ exports[`AddToys renders correctly 1`] = `
           type="number"
         >
           <option
+            value="select borrow period"
+          >
+            Select Borrow Period
+          </option>
+          <option
             value="0-3"
           >
             1 month
@@ -201,7 +204,36 @@ exports[`AddToys renders correctly 1`] = `
           </option>
         </select>
       </label>
+      <label
+        for="postcode"
+      >
+        Postcode:
+        <br />
+        <br />
+        <input
+          id="postcode"
+          name="postcode"
+          placeholder="Enter postcode"
+          type="text"
+          value=""
+        />
+      </label>
+      <label
+        for="image"
+      >
+        Image Upload:
+        <br />
+        <br />
+        <input
+          id="image"
+          name="image"
+          placeholder="Enter demo image name"
+          type="text"
+          value=""
+        />
+      </label>
       <button
+        class="button"
         type="submit"
       >
         Add
