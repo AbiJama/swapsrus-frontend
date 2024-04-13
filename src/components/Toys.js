@@ -12,43 +12,28 @@ function Toys() {
   const { search } = useLocation();
 
   const handleSetToys = (category, condition, ageRange) => {
-    let filtered = [...toys];
-
-    const intermediateFilteredToys = []; // Array to hold intermediate filtered results
-
-// Apply category filter if specified
-if (category !== "all") {
-    const categoryFiltered = filtered.filter(toy => toy.type === category);
-    if (categoryFiltered.length > 0) {
-        intermediateFilteredToys.push(categoryFiltered);
+    if (category === "all" && condition === "all" && ageRange === "all") {
+      setFilteredToys(toys);
+      return;
     }
-}
 
-// Apply condition filter if specified
-if (condition !== "all") {
-    const conditionFiltered = filtered.filter(toy => toy.condition === condition);
-    if (conditionFiltered.length > 0) {
-        intermediateFilteredToys.push(conditionFiltered);
+    let filteredArray = [...toys];
+    if (category !== "all") {
+      filteredArray = filteredArray.filter((toy) => toy.type === category);
+      setFilteredToys(filteredArray);
     }
-}
 
-// Apply ageRange filter if specified
-if (ageRange !== "all") {
-    const ageRangeFiltered = filtered.filter(toy => toy.ageRange === ageRange);
-    if (ageRangeFiltered.length > 0) {
-        intermediateFilteredToys.push(ageRangeFiltered);
+    if (condition !== "all") {
+      filteredArray = filteredArray.filter(
+        (toy) => toy.condition === condition
+      );
+      setFilteredToys(filteredArray);
     }
-}
 
-// Combine intermediate filtered results
-if (intermediateFilteredToys.length > 0) {
-    filtered = intermediateFilteredToys.reduce((accumulator, current) => accumulator.filter(item => current.includes(item)));
-} else {
-    filtered = [];
-}
-
-// Set the filtered toys
-setFilteredToys(filtered);
+    if (ageRange !== "all") {
+      filteredArray = filteredArray.filter((toy) => toy.ageRange === ageRange);
+      setFilteredToys(filteredArray);
+    }
   };
 
   useEffect(() => {
@@ -77,7 +62,7 @@ setFilteredToys(filtered);
       <h2>Browse Toys:</h2>
       <div className="toys-display">
         <SideBar handleSetToys={handleSetToys} />
-        {filteredToys.length > 0 ? filteredToys.map((toy) => (
+        {filteredToys.map((toy) => (
           <ToyCard
             key={toy.id}
             id={toy.id}
@@ -90,23 +75,7 @@ setFilteredToys(filtered);
             image={toy.image}
             setToys={setToys}
           />
-        )) 
-      :
-      toys.map((toy) => (
-        <ToyCard
-          key={toy.id}
-          id={toy.id}
-          title={toy.title}
-          type={toy.type}
-          description={toy.description}
-          ageRange={toy.ageRange}
-          condition={toy.condition}
-          postcode={toy.postcode}
-          image={toy.image}
-          setToys={setToys}
-        />
-      )) 
-      }
+        ))}
       </div>
     </>
   );
