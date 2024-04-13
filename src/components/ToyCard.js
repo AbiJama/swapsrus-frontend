@@ -46,15 +46,14 @@ export default function ToyCard(props) {
       <p>Postcode: {postcode}</p>
       <div className="toy-card_buttons">
         <button
-          className="button toy-card_delete"
+          className="toy-card_button toy-card_delete"
           type="button"
           onClick={handleDelete}
-        >
-          Delete <FontAwesomeIcon icon={faTrashCan} />
+        >Delete <FontAwesomeIcon icon={faTrashCan} />
         </button>
         <button
           type="button"
-          className="button toy-card_heart"
+          className="toy-card_button toy-card_heart"
           onClick={handleClick}
         >
           <img src={`/images/heart_${heart}.png`} alt="favourite icon" />

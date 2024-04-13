@@ -21,14 +21,16 @@
 
 .toy-card_buttons{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 30px;
 }
 
-.button{
+.toy-card_button{
     border-radius: 3px;
     border: none;
-    padding: 5px
+    padding: 5px;
+    background-color: #FFC93C
+
 }
 
 .toy-card_heart>img{

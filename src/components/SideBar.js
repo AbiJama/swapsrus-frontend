@@ -5,7 +5,6 @@ function SideBar({ handleSetToys }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedCondition, setSelectedCondition] = useState("all");
   const [selectedAgeRange, setSelectedAgeRange] = useState("all");
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -22,10 +21,6 @@ function SideBar({ handleSetToys }) {
     handleSetToys(selectedCategory, selectedCondition, ageRange);
   };
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
   const clearFilter = () => {
     setSelectedCategory("all");
     setSelectedCondition("all");
@@ -34,14 +29,10 @@ function SideBar({ handleSetToys }) {
   };
 
   return (
-    <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      <button type="button" className="toggle-button" onClick={toggleSidebar}>
-        {isOpen ? "Close Sidebar" : "Open Sidebar"}
-      </button>
 
-      {isOpen && (
         <>
-          <h1 className="sidebar-heading">Filter by type</h1>
+        <div>
+        <h3 className="sidebar-heading">Filter by type</h3>
           <ul className="sidebar-links">
             <li>
               <button
@@ -82,15 +73,16 @@ function SideBar({ handleSetToys }) {
             <li>
               <button
                 type="button"
-                className="sidebar-links-item"
+                className="clear sidebar-links-item"
                 onClick={clearFilter}
               >
                 Clear Filter
               </button>
             </li>
           </ul>
-
-          <h2 className="sidebar-heading">Filter by Condition</h2>
+        </div>
+        <div>
+        <h3 className="sidebar-heading">Filter by Condition</h3>
           <ul className="sidebar-links">
             <li>
               <button
@@ -140,15 +132,16 @@ function SideBar({ handleSetToys }) {
             <li>
               <button
                 type="button"
-                className="sidebar-links-item"
+                className="clear sidebar-links-item"
                 onClick={clearFilter}
               >
                 Clear Filter
               </button>
             </li>
           </ul>
-
-          <h3 className="sidebar-heading">Filter by Age Range</h3>
+        </div>
+         <div>
+         <h3 className="sidebar-heading">Filter by Age Range</h3>
           <ul className="sidebar-links">
             <li>
               <button
@@ -198,16 +191,16 @@ function SideBar({ handleSetToys }) {
             <li>
               <button
                 type="button"
-                className="sidebar-links-item"
+                className=" clear sidebar-links-item"
                 onClick={clearFilter}
               >
                 Clear Filter
               </button>
             </li>
           </ul>
+         </div>
+          
         </>
-      )}
-    </div>
   );
 }
 
