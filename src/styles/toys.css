@@ -1,4 +1,4 @@
-.toys-display{
+.toy-cards{
     display:flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -12,3 +12,12 @@ h2{
     text-align: center;
     margin-top: 20px;
 }
+
+.toys{
+    display: grid;
+    grid-template-columns: 20% 5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+      "sidebar toys-display"
+      "sidebar toys-display";
+  }

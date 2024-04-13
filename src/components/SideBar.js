@@ -6,84 +6,85 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "../styles/sidebar.css";
 
 function SideBar() {
-  const { search } = useLocation();
-  const buildQueryString = (operation, valueObj) => {
-    const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
-    const newQueryParams = {
-      ...currentQueryParams,
-      [operation]: JSON.stringify({
-        ...JSON.parse(currentQueryParams[operation] || "{}"),
-        ...valueObj,
-      }),
-    };
-
-    return qs.stringify(newQueryParams, {
-      addQueryPrefix: true,
-      encode: false,
-    });
+ const { search } = useLocation();
+ const buildQueryString = (operation, valueObj) => {
+  const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
+  const newQueryParams = {
+   ...currentQueryParams,
+   [operation]: JSON.stringify({
+    ...JSON.parse(currentQueryParams[operation] || "{}"),
+    ...valueObj,
+   }),
   };
 
-  const [query, setQuery] = useState("");
-  const navigate = useNavigate();
+  return qs.stringify(newQueryParams, {
+   addQueryPrefix: true,
+   encode: false,
+  });
+ };
 
-  const handleSearch = (event) => {
-    event.preventDefault();
+ const [query, setQuery] = useState("");
+ const navigate = useNavigate();
 
-    const searchQuery = buildQueryString("query", {
-      title: { $regex: query },
-    });
-    navigate(searchQuery);
-  };
+ const handleSearch = (event) => {
+  event.preventDefault();
 
-  const handleFieldChange = (event) => {
-    setQuery(event.target.value);
-  };
+  const searchQuery = buildQueryString("query", {
+   title: { $regex: query },
+  });
+  navigate(searchQuery);
+ };
 
-  return (
-    <div className="sidebar">
-      <form className="sidebar-search" onSubmit={handleSearch}>
-        <input type="text" onChange={handleFieldChange} />
-      </form>
-      <h3 className="sidebar-heading">Filter By Type</h3>
-      <ul className="sidebar-links">
-        <li className="sidebar-links-item">
-          <Link to={buildQueryString("query", { type: "Book" })}>Book</Link>
-        </li>
-        <li className="sidebar-links-item">
-          <Link to={buildQueryString("query", { type: "Pre-school" })}>
-            Pre-school
-          </Link>
-        </li>
-        <li className="sidebar-links-item">
-          <Link to={buildQueryString("query", { type: "Indoor" })}>Indoor</Link>
-        </li>
-        <li className="sidebar-links-item">
-          <Link to={buildQueryString("query", { type: "Outdoor" })}>
-            Outdoor
-          </Link>
-        </li>
-        <li className="sidebar-links-item clear-filter">
-          <Link to="/">Clear Filter</Link>
-        </li>
-      </ul>
-      <h3 className="sidebar-heading">Sort By</h3>
-      <ul className="sidebar-links">
-        <li className="sidebar-links-item">
-          <Link to={buildQueryString("sort", { AgeRange: 1 })}>
-            AgeRange Ascending
-          </Link>
-        </li>
-        <li className="sidebar-links-item">
-          <Link to={buildQueryString("sort", { AgeRange: -1 })}>
-            AgeRange Descending
-          </Link>
-        </li>
-        <li className="sidebar-links-item clear-filter">
-          <Link to="/">Clear Sort</Link>
-        </li>
-      </ul>
-    </div>
-  );
+ const handleFieldChange = (event) => {
+  setQuery(event.target.value);
+ };
+
+ return (
+  <div className="sidebar">
+   <form className="sidebar-search" onSubmit={handleSearch}>
+    <input type="text" onChange={handleFieldChange} />
+    <button aria-label="search" className="sidebar-button" type="submit">
+     <FontAwesomeIcon icon={faMagnifyingGlass} />
+    </button>
+   </form>
+   <h3 className="sidebar-heading">Filter By Type</h3>
+   <ul className="sidebar-links">
+    <li className="sidebar-links-item">
+     <Link to={buildQueryString("query", { type: "Book" })}>Book</Link>
+    </li>
+    <li className="sidebar-links-item">
+     <Link to={buildQueryString("query", { type: "Pre-school" })}>
+      Pre-school
+     </Link>
+    </li>
+    <li className="sidebar-links-item">
+     <Link to={buildQueryString("query", { type: "Indoor" })}>Indoor</Link>
+    </li>
+    <li className="sidebar-links-item">
+     <Link to={buildQueryString("query", { type: "Outdoor" })}>Outdoor</Link>
+    </li>
+    <li className="sidebar-links-item clear-filter">
+     <Link to="/">Clear Filter</Link>
+    </li>
+   </ul>
+   <h3 className="sidebar-heading">Sort By</h3>
+   <ul className="sidebar-links">
+    <li className="sidebar-links-item">
+     <Link to={buildQueryString("sort", { AgeRange: 1 })}>
+      AgeRange Ascending
+     </Link>
+    </li>
+    <li className="sidebar-links-item">
+     <Link to={buildQueryString("sort", { AgeRange: -1 })}>
+      AgeRange Descending
+     </Link>
+    </li>
+    <li className="sidebar-links-item clear-filter">
+     <Link to="/">Clear Sort</Link>
+    </li>
+   </ul>
+  </div>
+ );
 }
 
 export default SideBar;

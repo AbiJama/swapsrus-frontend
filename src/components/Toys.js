@@ -20,24 +20,26 @@ function Toys() {
    <div className="sidebar">
     <SideBar />
    </div>
-   <h2>Browse Toys:</h2>
    <div className="toys-display">
-    {toys.map((toy) => {
-     return (
-      <ToyCard
-       key={toy.id}
-       id={toy.id}
-       title={toy.title}
-       type={toy.type}
-       description={toy.description}
-       ageRange={toy.ageRange}
-       condition={toy.condition}
-       postcode={toy.postcode}
-       image={toy.image}
-       setToys={setToys}
-      />
-     );
-    })}{" "}
+    <h2>Browse Toys</h2>
+    <div className="toy-cards">
+     {toys.map((toy) => {
+      return (
+       <ToyCard
+        key={toy.id}
+        id={toy.id}
+        title={toy.title}
+        type={toy.type}
+        description={toy.description}
+        ageRange={toy.ageRange}
+        condition={toy.condition}
+        postcode={toy.postcode}
+        image={toy.image}
+        setToys={setToys}
+       />
+      );
+     })}
+    </div>
    </div>
   </div>
  );
