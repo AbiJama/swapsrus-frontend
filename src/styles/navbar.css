@@ -39,6 +39,14 @@ li > a{
     margin: 10px;
 }
 
+.logout-link {
+    background-color: #2b677c;
+    color: #ffc93c;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px 100px 10px; 
+  }
+
 .navbar-profile-icon>*{
     color:#FFC93C;
     margin-top: 40px;
