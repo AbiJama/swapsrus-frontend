@@ -125,7 +125,7 @@ function SideBar({ handleSetToys }) {
                 className="sidebar-links-item"
                 onClick={() => handleConditionClick("Used")}
               >
-                Used
+                Fair
               </button>
             </li>
             <li>
