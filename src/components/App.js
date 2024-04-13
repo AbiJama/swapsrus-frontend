@@ -4,10 +4,8 @@ import NavBar from "./NavBar";
 import Toys from "./Toys";
 import AddToys from "./AddToys";
 import AboutUs from "./AboutUs";
-import Login from "./Login"
 import Register from "./Register";
 import Profile from "./Profile";
-import SideBar from "./SideBar";
 import Login from "./Login";
 import Logout from "./Logout";
 
@@ -16,7 +14,6 @@ function App() {
 
   return (
     <div className="App">
-      <SideBar />
       <NavBar />
       <Routes>
         <Route path="/login" element={<Login />} />
