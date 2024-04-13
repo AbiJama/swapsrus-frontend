@@ -94,7 +94,6 @@ function AddToys() {
             <option value="Select Condition">Select Condition</option>
             <option value="Brand New">Brand New</option>
             <option value="Like New">Like New</option>
-            <option value="Used">Used</option>
             <option value="Good">Good</option>
             <option value="Fair">Fair</option>
             <option value="Defected">Defected</option>
