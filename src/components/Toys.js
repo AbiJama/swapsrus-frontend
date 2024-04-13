@@ -5,7 +5,6 @@ import getToys from "../requests/getToys";
 import ToyCard from "./ToyCard";
 import SideBar from "./SideBar";
 import "../styles/toys.css";
-import SideBar from "./SideBar";
 
 function Toys() {
   const [toys, setToys] = useState([]);
