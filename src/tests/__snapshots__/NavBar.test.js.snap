@@ -40,8 +40,6 @@ exports[`NavBar renders correctly 1`] = `
           Add Toys
         </a>
       </li>
-    </ul>
-    <ul>
       <li
         class="navbar-profile-icon"
       >

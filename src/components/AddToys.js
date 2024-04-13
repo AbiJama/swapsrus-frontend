@@ -14,6 +14,7 @@ function AddToys() {
       borrowPeriod: "",
       postcode: "",
       image: "",
+      image: "",
     },
     alert: {
       message: "",
@@ -30,7 +31,7 @@ function AddToys() {
     try {
       const response = await axios.post("http://localhost:4000/toys", fields);
       setAlert({
-        message: "The toy has been added successfully!",
+        message: "The item has been added successfully!",
         isSuccess: true,
       });
     } catch (error) {
@@ -94,7 +95,6 @@ function AddToys() {
             <option value="Select Condition">Select Condition</option>
             <option value="Brand New">Brand New</option>
             <option value="Like New">Like New</option>
-            <option value="Used">Used</option>
             <option value="Good">Good</option>
             <option value="Fair">Fair</option>
             <option value="Defected">Defected</option>
@@ -145,6 +145,7 @@ function AddToys() {
             onChange={handleFieldChange}
           >
             <option value="select borrow period">Select Borrow Period</option>
+            <option value="select borrow period">Select Borrow Period</option>
             <option value="0-3">1 month</option>
             <option value="3-6">3 months</option>
             <option value="6-9">6 months</option>
@@ -176,10 +177,13 @@ function AddToys() {
             onChange={handleFieldChange}
           />
         </label>
-        <button className="button" type="submit">Add</button>
+        <button className="button" type="submit">
+          Add
+        </button>
       </form>
     </div>
   );
+}
 }
 
 export default AddToys;

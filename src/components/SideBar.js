@@ -1,90 +1,214 @@
 import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import qs from "qs";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "../styles/sidebar.css";
 
-function SideBar() {
- const { search } = useLocation();
- const buildQueryString = (operation, valueObj) => {
-  const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
-  const newQueryParams = {
-   ...currentQueryParams,
-   [operation]: JSON.stringify({
-    ...JSON.parse(currentQueryParams[operation] || "{}"),
-    ...valueObj,
-   }),
+function SideBar({ handleSetToys }) {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCondition, setSelectedCondition] = useState("all");
+  const [selectedAgeRange, setSelectedAgeRange] = useState("all");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    handleSetToys(category, selectedCondition, selectedAgeRange);
   };
 
-  return qs.stringify(newQueryParams, {
-   addQueryPrefix: true,
-   encode: false,
-  });
- };
+  const handleConditionClick = (condition) => {
+    setSelectedCondition(condition);
+    handleSetToys(selectedCategory, condition, selectedAgeRange);
+  };
 
- const [query, setQuery] = useState("");
- const navigate = useNavigate();
+  const handleAgeRangeClick = (ageRange) => {
+    setSelectedAgeRange(ageRange);
+    handleSetToys(selectedCategory, selectedCondition, ageRange);
+  };
 
- const handleSearch = (event) => {
-  event.preventDefault();
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
-  const searchQuery = buildQueryString("query", {
-   title: { $regex: query },
-  });
-  navigate(searchQuery);
- };
+  const clearFilter = () => {
+    setSelectedCategory("all");
+    setSelectedCondition("all");
+    setSelectedAgeRange("all");
+    handleSetToys("all", "all", "all");
+  };
 
- const handleFieldChange = (event) => {
-  setQuery(event.target.value);
- };
+  return (
+    <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <button type="button" className="toggle-button" onClick={toggleSidebar}>
+        {isOpen ? "Close Sidebar" : "Open Sidebar"}
+      </button>
 
- return (
-  <div className="sidebar">
-   <form className="sidebar-search" onSubmit={handleSearch}>
-    <input type="text" onChange={handleFieldChange} />
-    <button aria-label="search" className="sidebar-button" type="submit">
-     <FontAwesomeIcon icon={faMagnifyingGlass} />
-    </button>
-   </form>
-   <h3 className="sidebar-heading">Filter By Type</h3>
-   <ul className="sidebar-links">
-    <li className="sidebar-links-item">
-     <Link to={buildQueryString("query", { type: "Book" })}>Book</Link>
-    </li>
-    <li className="sidebar-links-item">
-     <Link to={buildQueryString("query", { type: "Pre-school" })}>
-      Pre-school
-     </Link>
-    </li>
-    <li className="sidebar-links-item">
-     <Link to={buildQueryString("query", { type: "Indoor" })}>Indoor</Link>
-    </li>
-    <li className="sidebar-links-item">
-     <Link to={buildQueryString("query", { type: "Outdoor" })}>Outdoor</Link>
-    </li>
-    <li className="sidebar-links-item clear-filter">
-     <Link to="/">Clear Filter</Link>
-    </li>
-   </ul>
-   <h3 className="sidebar-heading">Sort By</h3>
-   <ul className="sidebar-links">
-    <li className="sidebar-links-item">
-     <Link to={buildQueryString("sort", { AgeRange: 1 })}>
-      AgeRange Ascending
-     </Link>
-    </li>
-    <li className="sidebar-links-item">
-     <Link to={buildQueryString("sort", { AgeRange: -1 })}>
-      AgeRange Descending
-     </Link>
-    </li>
-    <li className="sidebar-links-item clear-filter">
-     <Link to="/">Clear Sort</Link>
-    </li>
-   </ul>
-  </div>
- );
+      {isOpen && (
+        <>
+          <h1 className="sidebar-heading">Filter by type</h1>
+          <ul className="sidebar-links">
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleCategoryClick("Books")}
+              >
+                Books
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleCategoryClick("Pre-school")}
+              >
+                Pre-school
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleCategoryClick("Indoor")}
+              >
+                Indoor
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className={`sidebar-links-item ${selectedCategory === "Outdoor" ? "selected" : ""}`}
+                onClick={() => handleCategoryClick("Outdoor")}
+              >
+                Outdoor
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={clearFilter}
+              >
+                Clear Filter
+              </button>
+            </li>
+          </ul>
+
+          <h2 className="sidebar-heading">Filter by Condition</h2>
+          <ul className="sidebar-links">
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleConditionClick("Brand New")}
+              >
+                Brand New
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleConditionClick("Like New")}
+              >
+                Like New
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleConditionClick("Good")}
+              >
+                Good
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleConditionClick("Used")}
+              >
+                Fair
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleConditionClick("Defected")}
+              >
+                Defected
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={clearFilter}
+              >
+                Clear Filter
+              </button>
+            </li>
+          </ul>
+
+          <h3 className="sidebar-heading">Filter by Age Range</h3>
+          <ul className="sidebar-links">
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleAgeRangeClick("0-3")}
+              >
+                0-3
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleAgeRangeClick("3-6")}
+              >
+                3-6
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleAgeRangeClick("6-9")}
+              >
+                6-9
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleAgeRangeClick("9-12")}
+              >
+                9-12
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={() => handleAgeRangeClick("12+")}
+              >
+                12+
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="sidebar-links-item"
+                onClick={clearFilter}
+              >
+                Clear Filter
+              </button>
+            </li>
+          </ul>
+        </>
+      )}
+    </div>
+  );
 }
 
 export default SideBar;

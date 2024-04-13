@@ -5,6 +5,9 @@ exports[`AddToys renders correctly 1`] = `
   <div
     class="add-toys"
   >
+    <h2>
+      Add Toys
+    </h2>
     <form
       class="add-toy-form"
     >
@@ -82,11 +85,6 @@ exports[`AddToys renders correctly 1`] = `
             value="Like New"
           >
             Like New
-          </option>
-          <option
-            value="Used"
-          >
-            Used
           </option>
           <option
             value="Good"
@@ -211,6 +209,7 @@ exports[`AddToys renders correctly 1`] = `
       >
         Postcode:
         <br />
+        <br />
         <input
           id="postcode"
           name="postcode"
@@ -224,6 +223,7 @@ exports[`AddToys renders correctly 1`] = `
       >
         Image Upload:
         <br />
+        <br />
         <input
           id="image"
           name="image"
@@ -233,6 +233,7 @@ exports[`AddToys renders correctly 1`] = `
         />
       </label>
       <button
+        class="button"
         type="submit"
       >
         Add
