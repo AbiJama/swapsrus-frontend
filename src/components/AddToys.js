@@ -13,8 +13,18 @@ function AddToys() {
     borrowPeriod: "select borrow period",
     postcode: "",
     image: "",
+    title: "",
+    type: "books",
+    condition: "new",
+    ageRange: "",
+    description: "",
+    borrowPeriod: "select borrow period",
+    postcode: "",
+    image: "",
   };
 
+  const [fields, setFields] = useState(initialState);
+  const [alert, setAlert] = useState({ message: "", isSuccess: false });
   const [fields, setFields] = useState(initialState);
   const [alert, setAlert] = useState({ message: "", isSuccess: false });
 
@@ -22,12 +32,21 @@ function AddToys() {
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
 
+   if (!fields.title || !fields.ageRange || !fields.description || !fields.borrowPeriod) {
+    setAlert({
+      message: "Please fill out all required fields.",
+      isSuccess: false,
+    });
+    return;
+  }
+
     try {
       const response = await axios.post("http://localhost:4000/toys", fields);
       setAlert({
         message: "The item has been added successfully!",
         isSuccess: true,
       });
+      setFields(initialState);
       setFields(initialState);
     } catch (error) {
       setAlert({
@@ -40,14 +59,18 @@ function AddToys() {
     setFields(initialState.fields);
 >>>>>>> origin/main
   };
-
   const handleFieldChange = (event) => {
     const { name, value } = event.target;
     setFields((prevFields) => ({
       ...prevFields,
       [name]: value,
     }));
+    setFields((prevFields) => ({
+      ...prevFields,
+      [name]: value,
+    }));
   };
+
 
 
   return (
@@ -83,6 +106,7 @@ function AddToys() {
             <option value="Outdoor">Outdoor</option>
           </select>
           </label>
+          </label>
         <label htmlFor="condition">
           Condition:
           <br />
@@ -117,6 +141,10 @@ function AddToys() {
             <option value="3-6">3-6 years</option>
             <option value="6-9">6-9 years</option>
             <option value="9-12">9-12 years</option>
+            <option value="0-3">0-3 years</option>
+            <option value="3-6">3-6 years</option>
+            <option value="6-9">6-9 years</option>
+            <option value="9-12">9-12 years</option>
             <option value="12+">12+</option>
           </select>
         </label>
@@ -141,6 +169,8 @@ function AddToys() {
             id="borrowPeriod"
             name="borrowPeriod"
             type="number"
+            placeholder="select borrow period"
+            value={fields.borrowPeriod}
             placeholder="select borrow period"
             value={fields.borrowPeriod}
             onChange={handleFieldChange}
@@ -181,6 +211,7 @@ function AddToys() {
           Add
         </button>
       </form>
+      <Alert message={alert.message} success={alert.isSuccess} onChange={handleFieldChange}/>
       <Alert message={alert.message} success={alert.isSuccess} onChange={handleFieldChange}/>
     </div>
   );
