@@ -35,6 +35,10 @@ function AddToys() {
         isSuccess: false,
       });
     }
+<<<<<<< HEAD
+=======
+    setFields(initialState.fields);
+>>>>>>> origin/main
   };
 
   const handleFieldChange = (event) => {
