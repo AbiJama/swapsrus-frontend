@@ -119,11 +119,11 @@ function AddToys() {
             value={fields.ageRange}
             onChange={handleFieldChange}
           >
-            <option value="select age range">Select age range</option>
-            <option value="0-3">0-3 years</option>
-            <option value="3-6">3-6 years</option>
-            <option value="6-9">6-9 years</option>
-            <option value="9-12">9-12 years</option>
+            <option value="select age range">Select Age Range</option>
+            <option value="0-3">0-3 Years</option>
+            <option value="3-6">3-6 Years</option>
+            <option value="6-9">6-9 Years</option>
+            <option value="9-12">9-12 Years</option>
             <option value="12+">12+</option>
           </select>
         </label>
@@ -153,11 +153,11 @@ function AddToys() {
             onChange={handleFieldChange}
           >
             <option value="select borrow period">Select Borrow Period</option>
-            <option value="0-3">1 month</option>
-            <option value="3-6">3 months</option>
-            <option value="6-9">6 months</option>
-            <option value="9-12">12 months</option>
-            <option value="12+">12+months</option>
+            <option value="0-3">1 Month</option>
+            <option value="3-6">3 Months</option>
+            <option value="6-9">6 Months</option>
+            <option value="9-12">12 Months</option>
+            <option value="12+">12+ Months</option>
           </select>
         </label>
         <label htmlFor="postcode">
