@@ -8,31 +8,60 @@ exports[`AboutUs renders correctly 1`] = `
     <h1>
       About Us
     </h1>
-    <p>
-      We are a toy swapping website
-    </p>
+    <h2
+      class="about-us_tag"
+    >
+      Borrow. Play. Repeat.
+    </h2>
     <div
-      class="browse-logo-toys"
+      class="about-us_text"
+    >
+      <p>
+        We are a toy swapping website for local communities.
+      </p>
+      <p>
+        Toys can be expensive and children become easily bored of playing with them leaving you with rooms full of pretty new unloved toys.
+      </p>
+      <p>
+        At Swaps R Us you can upload your lonely toys and let others borrow them and you can pick some to borrow too.
+      </p>
+      <p>
+        Contact the lender and arrange a local pick-up. Swap and enjoy and then when you are bored - swap again!
+      </p>
+      <p>
+        Browse and upload your toys below.
+      </p>
+    </div>
+    <div
+      class="button-container"
     >
       <a
         href="/toys"
       >
-        <img
-          alt="logo with browse toys text"
-          src="browse-toys.png"
-        />
+        <button
+          class="browse-toys-logo"
+          type="button"
+        >
+          <img
+            alt="logo with browse toys text"
+            class="about-us_button"
+            src="browse-toys.png"
+          />
+        </button>
       </a>
-    </div>
-    <div
-      class="upload-toys-logo"
-    >
       <a
         href="/add-toys"
       >
-        <img
-          alt="logo with upload toys text"
-          src="upload-toys.png"
-        />
+        <button
+          class="upload-toys-logo"
+          type="button"
+        >
+          <img
+            alt="logo with upload toys text"
+            class="about-us_button"
+            src="upload-toys.png"
+          />
+        </button>
       </a>
     </div>
   </div>

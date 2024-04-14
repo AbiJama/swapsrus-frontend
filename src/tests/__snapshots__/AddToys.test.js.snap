@@ -209,7 +209,6 @@ exports[`AddToys renders correctly 1`] = `
       >
         Postcode:
         <br />
-        <br />
         <input
           id="postcode"
           name="postcode"
@@ -222,7 +221,6 @@ exports[`AddToys renders correctly 1`] = `
         for="image"
       >
         Image Upload:
-        <br />
         <br />
         <input
           id="image"
