@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
-import Toys from "./Toys";
 import AddToys from "./AddToys";
+import Toys from "./Toys";
 import AboutUs from "./AboutUs";
 import Register from "./Register";
 import Profile from "./Profile";
