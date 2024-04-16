@@ -48,18 +48,33 @@ export default function ToyCard(props) {
    <p>Postcode: {postcode}</p>
    <div className="toy-card_buttons">
     <button
-     className="toy-card_button toy-card_delete"
+     className="screen toy-card_button toy-card_delete"
      type="button"
      onClick={handleDelete}
     >
      Delete <FontAwesomeIcon icon={faTrashCan} />
     </button>
     <button
-     className="toy-card_button toy-card_contact"
+     className="mobile toy-card_button toy-card_delete"
+     type="button"
+     onClick={handleDelete}
+     aria-label="delete-button"
+    >
+    <FontAwesomeIcon icon={faTrashCan} />
+    </button>
+    <button
+     className="screen toy-card_button toy-card_contact"
      type="button"
      onClick={handleContact}
     >
-     Contact
+     Contact  <FontAwesomeIcon icon={faEnvelope} />
+    </button>
+    <button
+     className="mobile toy-card_button toy-card_contact"
+     type="button"
+     onClick={handleContact}
+     aria-label="contact-button"
+    >
        <FontAwesomeIcon icon={faEnvelope} />
     </button>
     <button type="button" className="toy-card_button toy-card_heart" onClick={handleClick}>

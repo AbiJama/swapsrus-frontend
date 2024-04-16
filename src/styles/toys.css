@@ -18,7 +18,9 @@ h2{
     grid-template-columns: 15% 5fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
+    "nav-bar nav-bar"
       "sidebar toys-display"
       "sidebar toys-display"
   }
+
 

@@ -38,3 +38,13 @@ p{
 .about-us_tag{
     text-align: center;
 }
+
+@media only screen and (max-width: 700px) {
+ .button-container{
+    flex-direction: column;
+ }
+ p{
+    width: 70%;
+    margin: 0 auto;
+ }
+  }
