@@ -5,46 +5,56 @@ import "../styles/add-toys.css";
 
 function AddToys(pristine) {
   const initialState = {
-    fields: {
-      title: "",
-      type: "books",
-      condition: "new",
-      ageRange: "",
-      description: "",
-      borrowPeriod: "",
-      postcode: "",
-      image: "",
-    },
-    alert: {
-      message: "",
-      isSuccess: false,
-    },
+    title: "",
+    type: "books",
+    condition: "new",
+    ageRange: "",
+    description: "",
+    borrowPeriod: "select borrow period",
+    postcode: "",
+    image: "",
   };
 
-  const [fields, setFields] = useState(initialState.fields);
-  const [alert, setAlert] = useState(initialState.alert);
+  const [fields, setFields] = useState(initialState);
+  const [alert, setAlert] = useState({ message: "", isSuccess: false });
 
   const handleAddToys = async (event) => {
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
+
+    if (
+      !fields.title ||
+      !fields.ageRange ||
+      !fields.description ||
+      !fields.borrowPeriod
+    ) {
+      setAlert({
+        message: "Please fill out all required fields.",
+        isSuccess: false,
+      });
+      return;
+    }
+
     try {
       const response = await axios.post("http://localhost:4000/toys", fields);
       setAlert({
         message: "The item has been added successfully!",
         isSuccess: true,
       });
+      setFields(initialState);
     } catch (error) {
       setAlert({
         message: "Server error, please try again later.",
         isSuccess: false,
       });
     }
-    setFields(initialState.fields);
   };
-
   const handleFieldChange = (event) => {
     const { name, value } = event.target;
-    setFields({ ...fields, [name]: value });
+    setFields((prevFields) => ({
+      ...prevFields,
+      [name]: value,
+    }));
   };
 
   return (
@@ -109,11 +119,11 @@ function AddToys(pristine) {
             value={fields.ageRange}
             onChange={handleFieldChange}
           >
-            <option value="select age range">Select age range</option>
-            <option value="0-3">0-3</option>
-            <option value="3-6">3-6</option>
-            <option value="6-9">6-9</option>
-            <option value="9-12">9-12</option>
+            <option value="select age range">Select Age Range</option>
+            <option value="0-3">0-3 Years</option>
+            <option value="3-6">3-6 Years</option>
+            <option value="6-9">6-9 Years</option>
+            <option value="9-12">9-12 Years</option>
             <option value="12+">12+</option>
           </select>
         </label>
@@ -138,17 +148,16 @@ function AddToys(pristine) {
             id="borrowPeriod"
             name="borrowPeriod"
             type="number"
-            placeholder="0"
-            value={fields.price}
+            placeholder="select borrow period"
+            value={fields.borrowPeriod}
             onChange={handleFieldChange}
           >
             <option value="select borrow period">Select Borrow Period</option>
-            <option value="select borrow period">Select Borrow Period</option>
-            <option value="0-3">1 month</option>
-            <option value="3-6">3 months</option>
-            <option value="6-9">6 months</option>
-            <option value="9-12">12 months</option>
-            <option value="12+">12+months</option>
+            <option value="0-3">1 Month</option>
+            <option value="3-6">3 Months</option>
+            <option value="6-9">6 Months</option>
+            <option value="9-12">12 Months</option>
+            <option value="12+">12+ Months</option>
           </select>
         </label>
         <label htmlFor="postcode">
@@ -179,7 +188,11 @@ function AddToys(pristine) {
           Add
         </button>
       </form>
-      <Alert message={alert.message} success={alert.isSuccess} />
+      <Alert
+        message={alert.message}
+        success={alert.isSuccess}
+        onChange={handleFieldChange}
+      />
     </div>
   );
 }
