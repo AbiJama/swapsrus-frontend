@@ -8,7 +8,7 @@ describe("SideBar", () => {
     const { asFragment } = render(
       <MemoryRouter>
         <SideBar />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -29,6 +29,5 @@ describe("SideBar", () => {
     expect(screen.getByText(/Like New/i)).toBeInTheDocument();
     expect(screen.getByText(/Good/i)).toBeInTheDocument();
     expect(screen.getByText(/Defected/i)).toBeInTheDocument();
-
-  })
+  });
 });
