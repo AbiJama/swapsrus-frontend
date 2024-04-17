@@ -67,7 +67,7 @@ function Toys() {
     <SideBar handleSetToys={handleSetToys} />
    </div>
    <div className="toys-display">
-    <button type="button" className="button mobile" onClick={handleFilter}>{showFilter}</button>
+    <button type="button" className="button mobile filter" onClick={handleFilter}>{showFilter}</button>
     <div className={`mobile sidebar ${showFilter}`}>
     <SideBar handleSetToys={handleSetToys} />
    </div>

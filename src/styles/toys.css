@@ -39,8 +39,6 @@ h2{
     }
     .mobile{
         display: block;
-        margin: 0 auto;
-        margin-top: 20px;
         color: #2b677c;
         padding: 3px;
     }
@@ -49,6 +47,10 @@ h2{
     }
     .Hide{
         display: block;
+    }
+    .filter{
+        margin: 0 auto;
+        margin-top: 20px;
     }
 
 }
