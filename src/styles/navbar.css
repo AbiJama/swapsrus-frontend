@@ -6,7 +6,9 @@
     justify-content: space-between;
 }
 
-
+.nav-bar>*{
+    background-color: #2B677C;
+}
 
 .nav-bar > img {
     height: 80px;
@@ -18,23 +20,23 @@
     display: flex;
     list-style-type: none;
     margin-top: 0px;
-    
 }
 
 li{
+    background-color: #2B677C;
     margin-top: 40px;
 }
 
-
+li>*>*{
+    background-color: #2B677C;
+}
 
 li > a{
     background-color: #2B677C;
     color: #FFC93C;
     text-decoration: none;
-    padding: 10px;
-    width: 50px;
+    padding: 20px;
     margin: 10px;
-    border: 1px solid;
 }
 
 .logout-link {
@@ -63,5 +65,8 @@ li > a{
     .nav-bar>ul{
         display: block;
         margin-bottom: 200px;
+    }
+    .nav-bar>*{
+        background-color: none;
     }
 }
