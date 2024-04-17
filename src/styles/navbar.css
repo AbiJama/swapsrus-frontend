@@ -69,4 +69,18 @@ li > a{
     .nav-bar>*{
         background-color: none;
     }
+    li>*>*{
+        background-color: none;
+    }
+    .nav-bar>*{
+        background-color: #F8F3D4;
+    }
+
+    li{
+        background-color: #F8F3D4;
+    }
+
+    li>a{
+        padding: 10px;
+    }
 }
