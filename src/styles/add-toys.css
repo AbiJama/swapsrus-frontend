@@ -36,3 +36,8 @@
     flex-direction: column;
   }
 
+@media screen and (max-width: 768px) {
+    .add-toys>h2{
+        margin-top: 330px;
+    }
+}

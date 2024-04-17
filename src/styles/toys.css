@@ -24,3 +24,8 @@ h2{
   }
 
 
+@media screen and (max-width: 768px) {
+    .toys{
+        margin-top: 300px;
+    }
+}
