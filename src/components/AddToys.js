@@ -3,7 +3,7 @@ import axios from "axios";
 import Alert from "./Alert";
 import "../styles/add-toys.css";
 
-function AddToys(pristine) {
+function AddToys() {
   const initialState = {
     title: "",
     type: "books",
@@ -184,7 +184,7 @@ function AddToys(pristine) {
             onChange={handleFieldChange}
           />
         </label>
-        <button className="button" type="submit" disabled={pristine}>
+        <button className="button" type="submit">
           Add
         </button>
       </form>
