@@ -2,21 +2,30 @@ import React, { useState } from "react";
 import axios from "axios";
 import Alert from "./Alert";
 import "../styles/add-toys.css";
+import { useAuth } from "../context/AuthContext";
 
 function AddToys() {
   const initialState = {
-    title: "",
-    type: "books",
-    condition: "new",
-    ageRange: "",
-    description: "",
-    borrowPeriod: "select borrow period",
-    postcode: "",
-    image: "",
+    fields: {
+      title: "",
+      type: "books",
+      condition: "new",
+      ageRange: "",
+      description: "",
+      borrowPeriod: "",
+      postcode: "",
+      image: "",
+      userUid: "",
+    },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
-  const [fields, setFields] = useState(initialState);
-  const [alert, setAlert] = useState({ message: "", isSuccess: false });
+  const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
+  const [userDetails] = useAuth();
 
   const handleAddToys = async (event) => {
     event.preventDefault();
@@ -36,12 +45,17 @@ function AddToys() {
     }
 
     try {
-      const response = await axios.post("http://localhost:4000/toys", fields);
+      const toyData = { ...fields, userUid: userDetails.uid };
+      const response = await axios.post(
+        "http://localhost:4000/toys/user/:uid",
+        toyData,
+      );
+      console.log("Response:", response);
       setAlert({
         message: "The item has been added successfully!",
         isSuccess: true,
       });
-      setFields(initialState);
+      setFields(initialState.fields);
     } catch (error) {
       setAlert({
         message: "Server error, please try again later.",
