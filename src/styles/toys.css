@@ -22,10 +22,33 @@ h2{
       "sidebar toys-display"
       "sidebar toys-display"
   }
+  .mobile{
+    display: none
+  }
 
 
 @media screen and (max-width: 768px) {
     .toys{
         margin-top: 300px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "toys-display"
     }
+    .screen {
+        display: none;
+    }
+    .mobile{
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        color: #2b677c;
+        padding: 3px;
+    }
+    .Filter{
+        display: none
+    }
+    .Hide{
+        display: block;
+    }
+
 }

@@ -10,7 +10,13 @@ function Toys() {
  const [toys, setToys] = useState([]);
  const [filteredToys, setFilteredToys] = useState([]);
  const { search } = useLocation();
+ const [showFilter, setshowFilter] = useState("Filter")
 
+ const handleFilter = () => {
+    setshowFilter(prev=>{
+        return prev==="Filter"? "Hide":"Filter"
+    })
+ }
  const handleSetToys = (category, condition, ageRange) => {
   if (category === "all" && condition === "all" && ageRange === "all") {
    setFilteredToys(toys);
@@ -57,10 +63,14 @@ function Toys() {
 
  return (
   <div className="toys">
-   <div className="sidebar">
+   <div className="screen sidebar">
     <SideBar handleSetToys={handleSetToys} />
    </div>
    <div className="toys-display">
+    <button type="button" className="button mobile" onClick={handleFilter}>{showFilter}</button>
+    <div className={`mobile sidebar ${showFilter}`}>
+    <SideBar handleSetToys={handleSetToys} />
+   </div>
    <h2>Browse Toys:</h2>
     <div className="toy-cards">
      {filteredToys.map((toy) => (
