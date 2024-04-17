@@ -30,6 +30,20 @@ function AddToys() {
   const handleAddToys = async (event) => {
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
+
+    if (
+      !fields.title ||
+      !fields.ageRange ||
+      !fields.description ||
+      !fields.borrowPeriod
+    ) {
+      setAlert({
+        message: "Please fill out all required fields.",
+        isSuccess: false,
+      });
+      return;
+    }
+
     try {
       const toyData = { ...fields, userUid: userDetails.uid };
       const response = await axios.post(
@@ -49,10 +63,12 @@ function AddToys() {
       });
     }
   };
-
   const handleFieldChange = (event) => {
     const { name, value } = event.target;
-    setFields({ ...fields, [name]: value });
+    setFields((prevFields) => ({
+      ...prevFields,
+      [name]: value,
+    }));
   };
 
   return (
@@ -117,11 +133,11 @@ function AddToys() {
             value={fields.ageRange}
             onChange={handleFieldChange}
           >
-            <option value="select age range">Select age range</option>
-            <option value="0-3">0-3</option>
-            <option value="3-6">3-6</option>
-            <option value="6-9">6-9</option>
-            <option value="9-12">9-12</option>
+            <option value="select age range">Select Age Range</option>
+            <option value="0-3">0-3 Years</option>
+            <option value="3-6">3-6 Years</option>
+            <option value="6-9">6-9 Years</option>
+            <option value="9-12">9-12 Years</option>
             <option value="12+">12+</option>
           </select>
         </label>
@@ -146,17 +162,16 @@ function AddToys() {
             id="borrowPeriod"
             name="borrowPeriod"
             type="number"
-            placeholder="0"
-            value={fields.price}
+            placeholder="select borrow period"
+            value={fields.borrowPeriod}
             onChange={handleFieldChange}
           >
             <option value="select borrow period">Select Borrow Period</option>
-            <option value="select borrow period">Select Borrow Period</option>
-            <option value="0-3">1 month</option>
-            <option value="3-6">3 months</option>
-            <option value="6-9">6 months</option>
-            <option value="9-12">12 months</option>
-            <option value="12+">12+months</option>
+            <option value="0-3">1 Month</option>
+            <option value="3-6">3 Months</option>
+            <option value="6-9">6 Months</option>
+            <option value="9-12">12 Months</option>
+            <option value="12+">12+ Months</option>
           </select>
         </label>
         <label htmlFor="postcode">
@@ -187,7 +202,11 @@ function AddToys() {
           Add
         </button>
       </form>
-      <Alert message={alert.message} success={alert.isSuccess} />
+      <Alert
+        message={alert.message}
+        success={alert.isSuccess}
+        onChange={handleFieldChange}
+      />
     </div>
   );
 }

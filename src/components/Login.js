@@ -19,12 +19,12 @@ function Login() {
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
-        password,
+        password
       );
       const { user } = userCredential;
       console.log("User logged in successfully!");
       const response = await axios.get(
-        `http://localhost:4000/users/uid/${user.uid}`,
+        `http://localhost:4000/users/uid/${user.uid}`
       );
       console.log("error", response.data);
       // eslint-disable-next-line no-unused-expressions

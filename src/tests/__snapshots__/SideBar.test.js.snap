@@ -2,123 +2,172 @@
 
 exports[`SideBar renders correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="sidebar"
-  >
-    <form
-      class="sidebar-search"
-    >
-      <input
-        type="text"
-      />
-      <button
-        type="submit"
-      >
-        <svg
-          aria-hidden="true"
-          class="svg-inline--fa fa-magnifying-glass "
-          data-icon="magnifying-glass"
-          data-prefix="fas"
-          focusable="false"
-          role="img"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
-            fill="currentColor"
-          />
-        </svg>
-      </button>
-    </form>
+  <div>
     <h3
       class="sidebar-heading"
     >
-      Filter By Type
+      Filter by type
     </h3>
     <ul
       class="sidebar-links"
     >
-      <li
-        class="sidebar-links-item"
-      >
-        <a
-          href="/?query={\\"type\\":\\"Book\\"}"
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
         >
-          Book
-        </a>
+          Books
+        </button>
       </li>
-      <li
-        class="sidebar-links-item"
-      >
-        <a
-          href="/?query={\\"type\\":\\"Pre-school\\"}"
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
         >
           Pre-school
-        </a>
+        </button>
       </li>
-      <li
-        class="sidebar-links-item"
-      >
-        <a
-          href="/?query={\\"type\\":\\"Indoor\\"}"
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
         >
           Indoor
-        </a>
+        </button>
       </li>
-      <li
-        class="sidebar-links-item"
-      >
-        <a
-          href="/?query={\\"type\\":\\"Outdoor\\"}"
+      <li>
+        <button
+          class="sidebar-links-item "
+          type="button"
         >
           Outdoor
-        </a>
+        </button>
       </li>
-      <li
-        class="sidebar-links-item clear-filter"
-      >
-        <a
-          href="/"
+      <li>
+        <button
+          class="clear sidebar-links-item"
+          type="button"
         >
           Clear Filter
-        </a>
+        </button>
       </li>
     </ul>
+  </div>
+  <div>
     <h3
       class="sidebar-heading"
     >
-      Sort By
+      Filter by Condition
     </h3>
     <ul
       class="sidebar-links"
     >
-      <li
-        class="sidebar-links-item"
-      >
-        <a
-          href="/?sort={\\"AgeRange\\":1}"
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
         >
-          AgeRange Ascending
-        </a>
+          Brand New
+        </button>
       </li>
-      <li
-        class="sidebar-links-item"
-      >
-        <a
-          href="/?sort={\\"AgeRange\\":-1}"
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
         >
-          AgeRange Descending
-        </a>
+          Like New
+        </button>
       </li>
-      <li
-        class="sidebar-links-item clear-filter"
-      >
-        <a
-          href="/"
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
         >
-          Clear Sort
-        </a>
+          Good
+        </button>
+      </li>
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
+        >
+          Fair
+        </button>
+      </li>
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
+        >
+          Defected
+        </button>
+      </li>
+      <li>
+        <button
+          class="clear sidebar-links-item"
+          type="button"
+        >
+          Clear Filter
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3
+      class="sidebar-heading"
+    >
+      Filter by Age Range
+    </h3>
+    <ul
+      class="sidebar-links"
+    >
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
+        >
+          0-3
+        </button>
+      </li>
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
+        >
+          3-6
+        </button>
+      </li>
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
+        >
+          6-9
+        </button>
+      </li>
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
+        >
+          9-12
+        </button>
+      </li>
+      <li>
+        <button
+          class="sidebar-links-item"
+          type="button"
+        >
+          12+
+        </button>
+      </li>
+      <li>
+        <button
+          class=" clear sidebar-links-item"
+          type="button"
+        >
+          Clear Filter
+        </button>
       </li>
     </ul>
   </div>

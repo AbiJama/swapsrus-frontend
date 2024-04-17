@@ -35,7 +35,7 @@ li > a{
     background-color: #2B677C;
     color: #FFC93C;
     text-decoration: none;
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
 }
 
@@ -58,3 +58,15 @@ li > a{
 
 }
 
+@media screen and (max-width: 768px){
+    .nav-bar{
+        display: block;
+    }
+    .nav-bar>ul{
+        display: block;
+        margin-bottom: 200px;
+    }
+    .nav-bar>*{
+        background-color: none;
+    }
+}

@@ -3,7 +3,7 @@
 exports[`Alert renders a success message 1`] = `
 <DocumentFragment>
   <div
-    class="alert alert-$(success ? \\"success\\" : \\"error\\")"
+    class="alert alert-success"
   >
     Success!!!
   </div>
@@ -13,7 +13,7 @@ exports[`Alert renders a success message 1`] = `
 exports[`Alert renders an error message 1`] = `
 <DocumentFragment>
   <div
-    class="alert alert-$(success ? \\"success\\" : \\"error\\")"
+    class="alert alert-error"
   >
     Error!
   </div>
